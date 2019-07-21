@@ -18,12 +18,16 @@ wks = gc.open("test1").sheet1
 # Extract and print all of the values
 # list_of_hashes = sheet.get_all_records()
 # print(list_of_hashes)
-app = Flask(__name__)  
+app = Flask(__name__) 
 @app.route('/')
+def func():
+         return render_template('')
+
+@app.route('/form')
 
 def form():
     return render_template('contact.html')
-@app.route('/', methods=['POST'])
+@app.route('/form', methods=['POST'])
 def sub():
     text=['1']*13
     text[0] = request.form['name']
